@@ -1,4 +1,4 @@
-@php
+﻿@php
     $navigationItems = [
         [
             'label' => 'Beranda',
@@ -76,24 +76,24 @@
 <header
     x-data="{ mobileOpen: false, scrolled: false, activeAccordion: @js($activeAccordionIndex) }"
     x-init="
-        scrolled = window.scrollY > 12;
-        window.addEventListener('scroll', () => scrolled = window.scrollY > 12, { passive: true });
+        scrolled = window.scrollY > 24;
+        window.addEventListener('scroll', () => scrolled = window.scrollY > 24, { passive: true });
     "
-    x-bind:class="scrolled ? 'border-neutral-200/80 bg-white/86 shadow-lg shadow-neutral-950/8' : 'border-white/20 bg-white/70 shadow-none'"
-    class="site-navbar fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl transition-all duration-300"
+    x-bind:class="scrolled ? 'border-[#081F3A] bg-[#081F3A] shadow-xl shadow-slate-950/20' : 'border-transparent bg-transparent shadow-none'"
+    class="site-navbar fixed inset-x-0 top-0 z-50 border-b transition-all duration-300"
 >
     <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8" aria-label="Navigasi utama">
         <a href="{{ route('home') }}" class="flex items-center gap-3" aria-label="Karya Fortuna Shipping">
-            <span class="flex size-11 items-center justify-center rounded-lg bg-neutral-950 shadow-lg shadow-neutral-950/15">
-                <span class="text-base font-extrabold text-white">KF</span>
+            <span x-bind:class="scrolled ? 'bg-white text-[#0F2D52]' : 'bg-[#0F2D52] text-white'" class="flex size-11 items-center justify-center rounded-md shadow-lg shadow-slate-950/15 transition-colors">
+                <span class="text-base font-extrabold">KF</span>
             </span>
             <span class="flex flex-col leading-none">
-                <span class="text-base font-bold text-neutral-950 sm:text-lg">Karya Fortuna</span>
-                <span class="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-red-700">Group</span>
+                <span x-bind:class="scrolled ? 'text-white' : 'text-[#0F2D52]'" class="text-base font-extrabold transition-colors sm:text-lg">Karya Fortuna</span>
+                <span class="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-[#C62828]">Shipping</span>
             </span>
         </a>
 
-        <div class="hidden items-center gap-1 lg:flex">
+        <div class="hidden items-center gap-1 rounded-full bg-white/72 px-2 py-1 backdrop-blur-md lg:flex">
             @foreach ($navigationItems as $item)
                 @php
                     $isActive = request()->routeIs(...$item['active']);
@@ -105,16 +105,16 @@
                     <a
                         href="{{ route($item['route']) }}"
                         @class([
-                            'group relative rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200',
-                            'text-neutral-950' => $isActive,
-                            'text-neutral-600 hover:text-neutral-950' => ! $isActive,
+                            'group relative rounded-md px-4 py-2 text-sm font-semibold transition-colors duration-200',
+                            'text-[#C62828]' => $isActive,
+                            'text-[#0F2D52] hover:text-[#C62828]' => ! $isActive,
                         ])
                         @if ($isActive) aria-current="page" @endif
                     >
                         {{ $item['label'] }}
                         <span
                             @class([
-                                'absolute inset-x-4 -bottom-1 h-0.5 rounded-full bg-red-700 transition-all duration-300',
+                                'absolute inset-x-4 -bottom-1 h-0.5 rounded-full bg-[#C62828] transition-all duration-300',
                                 'opacity-100' => $isActive,
                                 'opacity-0 group-hover:opacity-100' => ! $isActive,
                             ])
@@ -134,9 +134,9 @@
                     <a
                         href="{{ route($item['route']) }}"
                         @class([
-                            'motion-scale inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-bold shadow-lg transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700',
-                            'bg-red-800 text-white shadow-red-700/25' => $isActive,
-                            'bg-red-700 text-white shadow-red-700/20 hover:bg-red-800' => ! $isActive,
+                            'motion-scale inline-flex min-h-12 items-center justify-center rounded-md px-5 py-3 text-sm font-bold text-white shadow-lg transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C62828]',
+                            'bg-[#A61E1E] shadow-[#C62828]/25' => $isActive,
+                            'bg-[#C62828] shadow-[#C62828]/20 hover:bg-[#A61E1E]' => ! $isActive,
                         ])
                         @if ($isActive) aria-current="page" @endif
                     >
@@ -148,7 +148,7 @@
 
         <button
             type="button"
-            class="inline-flex size-11 items-center justify-center rounded-lg border border-neutral-200 bg-white/85 text-neutral-950 shadow-sm transition-colors hover:bg-white lg:hidden"
+            class="inline-flex size-11 items-center justify-center rounded-md border border-slate-200 bg-white/90 text-[#0F2D52] shadow-sm transition-colors hover:bg-white lg:hidden"
             x-on:click="mobileOpen = ! mobileOpen"
             x-bind:aria-expanded="mobileOpen.toString()"
             aria-controls="mobile-navigation"
@@ -168,7 +168,7 @@
         x-cloak
         x-show="mobileOpen"
         x-transition.opacity.duration.200ms
-        class="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-neutral-200/80 bg-white/96 px-5 py-4 shadow-xl shadow-neutral-950/8 backdrop-blur-xl lg:hidden"
+        class="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-slate-200/80 bg-white/96 px-5 py-4 shadow-xl shadow-slate-950/8 backdrop-blur-xl lg:hidden"
     >
         <div class="mx-auto flex max-w-7xl flex-col gap-2">
             @foreach ($navigationItems as $index => $item)
@@ -177,15 +177,15 @@
                 @endphp
 
                 @if (isset($item['children']))
-                    <div class="rounded-lg border border-neutral-200 bg-white">
+                    <div class="rounded-lg border border-slate-200 bg-white">
                         <button
                             type="button"
                             x-on:click="activeAccordion = activeAccordion === {{ $index }} ? null : {{ $index }}"
                             x-bind:aria-expanded="(activeAccordion === {{ $index }}).toString()"
                             @class([
                                 'flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-bold transition-colors',
-                                'bg-red-50 text-red-700' => $isActive,
-                                'text-neutral-900 hover:bg-neutral-50' => ! $isActive,
+                                'bg-red-50 text-[#C62828]' => $isActive,
+                                'text-[#0F2D52] hover:bg-slate-50' => ! $isActive,
                             ])
                         >
                             <span>{{ $item['label'] }}</span>
@@ -197,7 +197,7 @@
                         <div x-cloak x-show="activeAccordion === {{ $index }}" x-transition.opacity.duration.150ms class="px-2 pb-3">
                             @foreach ($item['children'] as $group)
                                 @if (isset($group['heading']))
-                                    <p class="px-3 pb-1 pt-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-900">
+                                    <p class="px-3 pb-1 pt-3 text-xs font-bold uppercase tracking-[0.16em] text-[#0F2D52]">
                                         {{ $group['heading'] }}
                                     </p>
                                 @endif
@@ -207,9 +207,9 @@
                                         href="{{ route($child['route']) }}"
                                         x-on:click="mobileOpen = false"
                                         @class([
-                                            'block rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors',
-                                            'bg-red-50 text-red-700' => request()->routeIs($child['route']),
-                                            'text-neutral-700 hover:bg-neutral-100 hover:text-neutral-950' => ! request()->routeIs($child['route']),
+                                            'block rounded-md px-3 py-2.5 text-sm font-semibold transition-colors',
+                                            'bg-red-50 text-[#C62828]' => request()->routeIs($child['route']),
+                                            'text-slate-700 hover:bg-slate-100 hover:text-[#0F2D52]' => ! request()->routeIs($child['route']),
                                         ])
                                         @if (request()->routeIs($child['route'])) aria-current="page" @endif
                                     >
@@ -225,10 +225,10 @@
                         x-on:click="mobileOpen = false"
                         @class([
                             'rounded-lg px-4 py-3 text-sm font-bold transition-colors',
-                            'bg-red-700 text-white shadow-lg shadow-red-700/20' => ($item['button'] ?? false) && ! $isActive,
-                            'bg-red-800 text-white shadow-lg shadow-red-700/20' => ($item['button'] ?? false) && $isActive,
-                            'bg-red-50 text-red-700' => ! ($item['button'] ?? false) && $isActive,
-                            'text-neutral-700 hover:bg-neutral-100 hover:text-neutral-950' => ! ($item['button'] ?? false) && ! $isActive,
+                            'bg-[#C62828] text-white shadow-lg shadow-[#C62828]/20' => ($item['button'] ?? false) && ! $isActive,
+                            'bg-[#A61E1E] text-white shadow-lg shadow-[#C62828]/20' => ($item['button'] ?? false) && $isActive,
+                            'bg-red-50 text-[#C62828]' => ! ($item['button'] ?? false) && $isActive,
+                            'text-slate-700 hover:bg-slate-100 hover:text-[#0F2D52]' => ! ($item['button'] ?? false) && ! $isActive,
                         ])
                         @if ($isActive) aria-current="page" @endif
                     >

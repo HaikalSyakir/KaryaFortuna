@@ -1,4 +1,4 @@
-@props([
+﻿@props([
     'item',
     'active' => false,
 ])
@@ -14,9 +14,9 @@
         x-on:click="open = ! open"
         x-bind:aria-expanded="open.toString()"
         @class([
-            'group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200',
-            'text-neutral-950' => $active,
-            'text-neutral-600 hover:text-neutral-950' => ! $active,
+            'group inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-colors duration-200',
+            'text-[#C62828]' => $active,
+            'text-[#0F2D52] hover:text-[#C62828]' => ! $active,
         ])
     >
         {{ $item['label'] }}
@@ -25,7 +25,7 @@
         </svg>
         <span
             @class([
-                'absolute inset-x-4 -bottom-1 h-0.5 rounded-full bg-red-700 transition-all duration-300',
+                'absolute inset-x-4 -bottom-1 h-0.5 rounded-full bg-[#C62828] transition-all duration-300',
                 'opacity-100' => $active,
                 'opacity-0 group-hover:opacity-100' => ! $active,
             ])
@@ -36,11 +36,11 @@
         x-cloak
         x-show="open"
         x-transition.opacity.duration.150ms
-        class="absolute left-1/2 top-full z-50 mt-4 w-72 -translate-x-1/2 rounded-xl border border-neutral-200 bg-white/95 p-3 shadow-2xl shadow-neutral-950/12 backdrop-blur-xl"
+        class="absolute left-1/2 top-full z-50 mt-4 w-76 -translate-x-1/2 rounded-lg border border-slate-200 bg-white/95 p-3 shadow-2xl shadow-slate-950/12 backdrop-blur-xl"
     >
         @foreach ($item['children'] as $group)
             @if (isset($group['heading']))
-                <p class="px-3 pb-2 pt-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-900 first:pt-1">
+                <p class="px-3 pb-2 pt-3 text-xs font-bold uppercase tracking-[0.16em] text-[#0F2D52] first:pt-1">
                     {{ $group['heading'] }}
                 </p>
             @endif
@@ -49,9 +49,9 @@
                 <a
                     href="{{ route($child['route']) }}"
                     @class([
-                        'block rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors duration-200',
-                        'bg-red-50 text-red-700' => request()->routeIs($child['route']),
-                        'text-neutral-700 hover:bg-neutral-100 hover:text-neutral-950' => ! request()->routeIs($child['route']),
+                        'block rounded-md px-3 py-2.5 text-sm font-semibold transition-colors duration-200',
+                        'bg-red-50 text-[#C62828]' => request()->routeIs($child['route']),
+                        'text-slate-700 hover:bg-slate-100 hover:text-[#0F2D52]' => ! request()->routeIs($child['route']),
                     ])
                     @if (request()->routeIs($child['route'])) aria-current="page" @endif
                 >
