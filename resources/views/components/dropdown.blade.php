@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'item',
     'active' => false,
 ])
@@ -13,11 +13,8 @@
         type="button"
         x-on:click="open = ! open"
         x-bind:aria-expanded="open.toString()"
-        @class([
-            'group inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-colors duration-200',
-            'text-[#C62828]' => $active,
-            'text-[#0F2D52] hover:text-[#C62828]' => ! $active,
-        ])
+        x-bind:class="scrolled ? '{{ $active ? 'text-[#F04444]' : 'text-white/88 hover:text-white' }}' : '{{ $active ? 'text-white' : 'text-white/86 hover:text-white' }}'"
+        class="group inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-colors duration-200"
     >
         {{ $item['label'] }}
         <svg class="size-4 transition-transform duration-200" x-bind:class="open ? 'rotate-180' : ''" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

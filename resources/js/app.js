@@ -1,4 +1,4 @@
-﻿import './bootstrap';
+import './bootstrap';
 
 import Alpine from 'alpinejs';
 import { animate, hover, inView } from 'motion';
@@ -70,6 +70,42 @@ if (!prefersReducedMotion) {
         '[data-carousel-shell]',
         { opacity: [0, 1], x: [18, 0] },
         { delay: 0.24, duration: 0.7, easing: [0.22, 1, 0.36, 1] },
+    );
+
+    animate(
+        '[data-home-hero-badge]',
+        { opacity: [0, 1] },
+        { delay: 0.08, duration: 0.45, easing: [0.22, 1, 0.36, 1] },
+    );
+
+    animate(
+        '[data-home-hero-heading]',
+        { opacity: [0, 1], y: [26, 0] },
+        { delay: 0.16, duration: 0.62, easing: [0.22, 1, 0.36, 1] },
+    );
+
+    animate(
+        '[data-home-hero-description]',
+        { opacity: [0, 1], y: [22, 0] },
+        { delay: 0.25, duration: 0.58, easing: [0.22, 1, 0.36, 1] },
+    );
+
+    animate(
+        '[data-home-hero-actions]',
+        { opacity: [0, 1], y: [20, 0] },
+        { delay: 0.33, duration: 0.56, easing: [0.22, 1, 0.36, 1] },
+    );
+
+    animate(
+        '[data-home-hero-visual]',
+        { opacity: [0, 1], scale: [0.96, 1] },
+        { delay: 0.24, duration: 0.68, easing: [0.22, 1, 0.36, 1] },
+    );
+
+    animate(
+        '[data-home-hero-scroll]',
+        { y: [0, 8, 0] },
+        { duration: 0.7, repeat: Infinity, easing: [0.45, 0, 0.55, 1] },
     );
 
     inView('[data-reveal]', (element) => {

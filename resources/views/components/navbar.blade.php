@@ -1,4 +1,4 @@
-﻿@php
+@php
     $navigationItems = [
         [
             'label' => 'Beranda',
@@ -79,21 +79,24 @@
         scrolled = window.scrollY > 24;
         window.addEventListener('scroll', () => scrolled = window.scrollY > 24, { passive: true });
     "
-    x-bind:class="scrolled ? 'border-[#081F3A] bg-[#081F3A] shadow-xl shadow-slate-950/20' : 'border-transparent bg-transparent shadow-none'"
+    x-bind:class="scrolled ? 'border-[#0F2D52] bg-[#0F2D52] shadow-xl shadow-slate-950/20' : 'border-transparent bg-transparent shadow-none'"
     class="site-navbar fixed inset-x-0 top-0 z-50 border-b transition-all duration-300"
 >
     <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8" aria-label="Navigasi utama">
         <a href="{{ route('home') }}" class="flex items-center gap-3" aria-label="Karya Fortuna Shipping">
-            <span x-bind:class="scrolled ? 'bg-white text-[#0F2D52]' : 'bg-[#0F2D52] text-white'" class="flex size-11 items-center justify-center rounded-md shadow-lg shadow-slate-950/15 transition-colors">
+            <span x-bind:class="scrolled ? 'bg-white text-[#0F2D52]' : 'bg-white text-[#0F2D52]'" class="flex size-11 items-center justify-center rounded-md shadow-lg shadow-slate-950/15 transition-colors">
                 <span class="text-base font-extrabold">KF</span>
             </span>
             <span class="flex flex-col leading-none">
-                <span x-bind:class="scrolled ? 'text-white' : 'text-[#0F2D52]'" class="text-base font-extrabold transition-colors sm:text-lg">Karya Fortuna</span>
+                <span class="text-base font-extrabold text-white transition-colors sm:text-lg">Karya Fortuna</span>
                 <span class="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-[#C62828]">Shipping</span>
             </span>
         </a>
 
-        <div class="hidden items-center gap-1 rounded-full bg-white/72 px-2 py-1 backdrop-blur-md lg:flex">
+        <div
+            x-bind:class="scrolled ? 'bg-white/10 ring-white/10' : 'bg-white/8 ring-white/15'"
+            class="hidden items-center gap-1 rounded-full px-2 py-1 ring-1 backdrop-blur-md transition-colors duration-300 lg:flex"
+        >
             @foreach ($navigationItems as $item)
                 @php
                     $isActive = request()->routeIs(...$item['active']);
@@ -104,11 +107,8 @@
                 @elseif (! ($item['button'] ?? false))
                     <a
                         href="{{ route($item['route']) }}"
-                        @class([
-                            'group relative rounded-md px-4 py-2 text-sm font-semibold transition-colors duration-200',
-                            'text-[#C62828]' => $isActive,
-                            'text-[#0F2D52] hover:text-[#C62828]' => ! $isActive,
-                        ])
+                        x-bind:class="scrolled ? '{{ $isActive ? 'text-[#F04444]' : 'text-white/88 hover:text-white' }}' : '{{ $isActive ? 'text-white' : 'text-white/86 hover:text-white' }}'"
+                        class="group relative rounded-md px-4 py-2 text-sm font-semibold transition-colors duration-200"
                         @if ($isActive) aria-current="page" @endif
                     >
                         {{ $item['label'] }}
