@@ -82,17 +82,23 @@
 @section('content')
     <x-home.hero />
 
-    <section class="bg-[#F8FAFC] py-12" aria-labelledby="trusted-clients-title">
+    <section class="relative overflow-hidden bg-[#F4F7FB] py-12" aria-labelledby="trusted-clients-title">
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[#0F2D52]/10"></div>
         <div data-reveal class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                 <div>
+                    <div class="mb-4 flex items-center gap-3">
+                        <span class="h-px w-10 bg-[#0F2D52]/60"></span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-[#C62828]"></span>
+                    </div>
                     <p id="trusted-clients-title" class="text-xs font-bold uppercase tracking-[0.18em] text-[#C62828]">Client Terpercaya</p>
                     <p class="mt-2 max-w-xl text-sm leading-7 text-slate-600">Dipercaya untuk mendukung kebutuhan operasional maritim, logistik, dan transportasi laut.</p>
                 </div>
 
                 <div class="grid flex-1 grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
                     @foreach ($clients as $client)
-                        <div class="rounded-md border border-slate-200 bg-white px-4 py-4 text-center text-xs font-bold uppercase tracking-[0.12em] text-[#0F2D52] shadow-sm shadow-slate-950/5">
+                        <div class="relative overflow-hidden rounded-md border border-[#0F2D52]/10 bg-white px-4 py-4 text-center text-xs font-bold uppercase tracking-[0.12em] text-[#0F2D52] shadow-sm shadow-slate-950/5 transition duration-300 hover:border-[#0F2D52]/35 hover:shadow-md hover:shadow-[#0F2D52]/8">
+                            <span class="absolute inset-x-0 top-0 h-0.5 bg-[#0F2D52]/70"></span>
                             {{ $client }}
                         </div>
                     @endforeach
@@ -101,7 +107,8 @@
         </div>
     </section>
 
-    <section class="bg-white py-20 sm:py-24">
+    <section class="relative overflow-hidden bg-white py-20 sm:py-24">
+        <div class="pointer-events-none absolute right-0 top-16 hidden h-px w-1/3 bg-gradient-to-l from-[#0F2D52]/16 to-transparent lg:block"></div>
         <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.85fr_1fr] lg:px-8">
             <div data-reveal>
                 <x-section-heading
@@ -125,7 +132,8 @@
         </div>
     </section>
 
-    <section class="bg-[#F8FAFC] py-20 sm:py-24">
+    <section class="relative overflow-hidden bg-[#F4F7FB] py-20 sm:py-24">
+        <div class="pointer-events-none absolute left-0 top-0 hidden h-full w-px bg-[#0F2D52]/10 lg:block"></div>
         <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div data-reveal class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                 <x-section-heading
@@ -153,7 +161,8 @@
         </div>
     </section>
 
-    <section class="bg-white py-20 sm:py-24">
+    <section class="relative overflow-hidden bg-white py-20 sm:py-24">
+        <div class="pointer-events-none absolute right-0 top-16 hidden h-px w-1/3 bg-gradient-to-l from-[#0F2D52]/16 to-transparent lg:block"></div>
         <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div data-reveal>
                 <x-section-heading
@@ -180,7 +189,7 @@
         </div>
     </section>
 
-    <section class="bg-[#F8FAFC] py-20 sm:py-24">
+    <section class="relative overflow-hidden bg-[#F4F7FB] py-20 sm:py-24">
         <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.9fr_1fr] lg:px-8">
             <div data-reveal>
                 <x-section-heading
@@ -192,8 +201,11 @@
 
             <div class="grid gap-4 sm:grid-cols-2">
                 @foreach ($advantages as $advantage)
-                    <div data-reveal class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/5">
-                        <span class="block h-1 w-12 rounded-full bg-[#C62828]"></span>
+                    <div data-reveal class="group rounded-lg border border-[#0F2D52]/12 bg-white p-6 shadow-sm shadow-slate-950/5 transition duration-300 hover:border-[#0F2D52]/35 hover:shadow-xl hover:shadow-[#0F2D52]/10">
+                        <div class="flex items-center gap-2">
+                            <span class="block h-1 w-10 rounded-full bg-[#0F2D52]"></span>
+                            <span class="block h-1 w-4 rounded-full bg-[#C62828] transition-all group-hover:w-7"></span>
+                        </div>
                         <p class="mt-5 text-sm leading-7 text-slate-700">{{ $advantage }}</p>
                     </div>
                 @endforeach
@@ -201,7 +213,9 @@
         </div>
     </section>
 
-    <section class="bg-[#081F3A] py-20 text-white sm:py-24">
+    <section class="relative overflow-hidden bg-[#081F3A] py-20 text-white sm:py-24">
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/15"></div>
+        <div class="pointer-events-none absolute bottom-10 left-0 h-px w-2/5 bg-gradient-to-r from-[#C62828]/45 to-transparent"></div>
         <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.95fr_1fr] lg:px-8">
             <div data-reveal>
                 <x-section-heading
@@ -214,16 +228,18 @@
 
             <div data-reveal class="grid gap-4 sm:grid-cols-2">
                 @foreach ($solutions as $solution)
-                    <div class="rounded-lg border border-white/10 bg-white/7 p-6 backdrop-blur-sm">
+                    <div class="group rounded-lg border border-white/10 bg-white/7 p-6 backdrop-blur-sm transition duration-300 hover:border-white/25 hover:bg-white/10">
                         <p class="text-lg font-extrabold">{{ $solution }}</p>
                         <span class="mt-5 block h-px w-full bg-white/15"></span>
+                        <span class="mt-3 block h-1 w-8 rounded-full bg-[#C62828]/80 transition-all group-hover:w-12"></span>
                     </div>
                 @endforeach
             </div>
         </div>
     </section>
 
-    <section class="bg-white py-20 sm:py-24">
+    <section class="relative overflow-hidden bg-white py-20 sm:py-24">
+        <div class="pointer-events-none absolute right-0 top-16 hidden h-px w-1/3 bg-gradient-to-l from-[#0F2D52]/16 to-transparent lg:block"></div>
         <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div data-reveal>
                 <x-section-heading
@@ -251,7 +267,7 @@
         </div>
     </section>
 
-    <section class="bg-[#F8FAFC] py-20 sm:py-24">
+    <section class="relative overflow-hidden bg-[#F4F7FB] py-20 sm:py-24">
         <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <div data-reveal>
                 <x-section-heading
@@ -260,7 +276,7 @@
                     description="Berbasis di Indonesia, kami mendukung kebutuhan klien melalui koordinasi yang dekat dengan area pelabuhan, proyek, dan rute pelayaran."
                 />
 
-                <div class="mt-8 rounded-lg border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-600 shadow-sm shadow-slate-950/5">
+                <div class="mt-8 rounded-lg border border-[#0F2D52]/12 bg-white p-6 text-sm leading-7 text-slate-600 shadow-sm shadow-slate-950/5">
                     <p class="font-bold text-[#111827]">Karya Fortuna Shipping</p>
                     <p class="mt-2">Jakarta, Indonesia</p>
                     <p>info@karyafortunashipping.co.id</p>
@@ -268,7 +284,7 @@
                 </div>
             </div>
 
-            <div data-reveal class="min-h-80 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm shadow-slate-950/5">
+            <div data-reveal class="min-h-80 overflow-hidden rounded-lg border border-[#0F2D52]/12 bg-white shadow-sm shadow-slate-950/5">
                 <div class="flex h-full min-h-80 items-center justify-center bg-[linear-gradient(135deg,#FFFFFF_0%,#F8FAFC_48%,#E2E8F0_100%)] p-8">
                     <div class="w-full max-w-md">
                         <div class="rounded-lg border border-[#0F2D52]/15 bg-white/85 p-6 shadow-xl shadow-slate-950/8 backdrop-blur-sm">
@@ -290,12 +306,14 @@
         </div>
     </section>
 
-    <section class="bg-white py-16 sm:py-20">
+    <section class="relative overflow-hidden bg-[#081F3A] py-16 text-white sm:py-20">
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/15"></div>
+        <div class="pointer-events-none absolute right-0 top-1/2 h-px w-1/3 bg-gradient-to-l from-[#C62828]/40 to-transparent"></div>
         <div data-reveal class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-5 sm:px-6 lg:flex-row lg:items-center lg:px-8">
             <div class="max-w-2xl">
                 <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#C62828]">Hubungi Kami</p>
-                <h2 class="mt-3 text-3xl font-extrabold text-[#111827] sm:text-4xl">Siap mendukung kebutuhan maritim Anda.</h2>
-                <p class="mt-4 text-base leading-8 text-slate-600">
+                <h2 class="mt-3 text-3xl font-extrabold text-white sm:text-4xl">Siap mendukung kebutuhan maritim Anda.</h2>
+                <p class="mt-4 text-base leading-8 text-slate-200">
                     Diskusikan kebutuhan transportasi laut, armada, crew, maintenance, atau dokumen kapal bersama tim kami.
                 </p>
             </div>
