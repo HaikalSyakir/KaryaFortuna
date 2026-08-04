@@ -8,6 +8,54 @@ import Fade from 'embla-carousel-fade';
 
 window.Alpine = Alpine;
 
+Alpine.data('homeHeroSlider', (slides = []) => ({
+    activeSlide: 0,
+    interval: 5500,
+    slides,
+    timer: null,
+
+    start() {
+        this.stop();
+
+        if (this.slides.length < 2) {
+            return;
+        }
+
+        this.timer = window.setInterval(() => this.next(false), this.interval);
+    },
+
+    stop() {
+        if (!this.timer) {
+            return;
+        }
+
+        window.clearInterval(this.timer);
+        this.timer = null;
+    },
+
+    restart() {
+        this.start();
+    },
+
+    next(resetTimer = true) {
+        this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+
+        if (resetTimer) {
+            this.restart();
+        }
+    },
+
+    previous() {
+        this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
+        this.restart();
+    },
+
+    goTo(index) {
+        this.activeSlide = index;
+        this.restart();
+    },
+}));
+
 Alpine.start();
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

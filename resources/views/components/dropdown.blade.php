@@ -13,7 +13,7 @@
         type="button"
         x-on:click="open = ! open"
         x-bind:aria-expanded="open.toString()"
-        x-bind:class="scrolled ? '{{ $active ? 'text-[#F04444]' : 'text-white/88 hover:text-white' }}' : '{{ $active ? 'text-white' : 'text-white/86 hover:text-white' }}'"
+        x-bind:class="scrolled ? '{{ $active ? 'text-[#F04444]' : 'text-white/88 hover:text-white' }}' : (lightAtTop ? '{{ $active ? 'text-[#C62828]' : 'text-[#0F2D52] hover:text-[#C62828]' }}' : '{{ $active ? 'text-white' : 'text-white/86 hover:text-white' }}')"
         class="group inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-colors duration-200"
     >
         {{ $item['label'] }}
