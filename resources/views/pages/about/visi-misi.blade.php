@@ -63,29 +63,14 @@
 @extends('layouts.app', ['title' => $title, 'description' => $description])
 
 @section('content')
-    <section class="relative isolate flex min-h-[56vh] overflow-hidden bg-[#081F3A] pt-16 text-white sm:min-h-[60vh]" aria-labelledby="vision-mission-hero-title">
-        <img
-            src="{{ $heroImage }}"
-            alt="Aktivitas pelayaran dan kapal di area maritim"
-            class="absolute inset-0 -z-20 h-full w-full object-cover"
-            loading="eager"
-            fetchpriority="high"
-        >
-        <div class="absolute inset-0 -z-10 bg-[#081F3A]/70"></div>
-        <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(8,31,58,0.95)_0%,rgba(8,31,58,0.76)_55%,rgba(8,31,58,0.42)_100%)]"></div>
-
-        <div class="mx-auto flex w-full max-w-7xl items-center px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div data-hero-text class="max-w-3xl">
-                <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-100">Tentang Kami</p>
-                <h1 id="vision-mission-hero-title" class="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                    Visi &amp; Misi Karya Fortuna Shipping
-                </h1>
-                <p class="mt-6 max-w-2xl text-base leading-8 text-white/84 sm:text-lg">
-                    Menjadi perusahaan maritim yang terus berkembang melalui layanan yang profesional, terpercaya, dan berorientasi pada kebutuhan pelanggan.
-                </p>
-            </div>
-        </div>
-    </section>
+    <x-page-hero
+        id="vision-mission-hero-title"
+        eyebrow="Tentang Kami"
+        :title="'Visi & Misi Karya Fortuna Shipping'"
+        description="Menjadi perusahaan maritim yang terus berkembang melalui layanan yang profesional, terpercaya, dan berorientasi pada kebutuhan pelanggan."
+        :background="$heroImage"
+        alt="Aktivitas pelayaran dan kapal di area maritim"
+    />
 
     <section class="relative overflow-hidden bg-white py-18 sm:py-24" aria-labelledby="vision-title">
         <div class="pointer-events-none absolute right-0 top-20 hidden h-px w-1/3 bg-gradient-to-l from-[#0F2D52]/16 to-transparent lg:block"></div>
@@ -213,4 +198,5 @@
         </div>
     </section>
 @endsection
+
 

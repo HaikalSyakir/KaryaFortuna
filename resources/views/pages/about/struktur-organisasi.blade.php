@@ -70,29 +70,14 @@
 @extends('layouts.app', ['title' => $title, 'description' => $description])
 
 @section('content')
-    <section class="relative isolate flex min-h-[54vh] overflow-hidden bg-[#081F3A] pt-16 text-white sm:min-h-[62vh]" aria-labelledby="organization-hero-title">
-        <img
-            src="{{ $heroImage }}"
-            alt="Kapal dan aktivitas maritim sebagai latar struktur organisasi"
-            class="absolute inset-0 -z-20 h-full w-full object-cover"
-            loading="eager"
-            fetchpriority="high"
-        >
-        <div class="absolute inset-0 -z-10 bg-[#081F3A]/72"></div>
-        <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(8,31,58,0.96)_0%,rgba(8,31,58,0.78)_54%,rgba(8,31,58,0.46)_100%)]"></div>
-
-        <div class="mx-auto flex w-full max-w-7xl items-center px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <div data-hero-text class="max-w-3xl">
-                <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-100">Tentang Kami</p>
-                <h1 id="organization-hero-title" class="mt-4 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                    Struktur Organisasi Karya Fortuna Shipping
-                </h1>
-                <p class="mt-6 max-w-2xl text-base leading-8 text-white/84 sm:text-lg">
-                    Struktur organisasi Karya Fortuna Shipping dibangun untuk mendukung koordinasi, efisiensi operasional, dan pencapaian tujuan perusahaan.
-                </p>
-            </div>
-        </div>
-    </section>
+    <x-page-hero
+        id="organization-hero-title"
+        eyebrow="Tentang Kami"
+        title="Struktur Organisasi Karya Fortuna Shipping"
+        description="Struktur organisasi Karya Fortuna Shipping dibangun untuk mendukung koordinasi, efisiensi operasional, dan pencapaian tujuan perusahaan."
+        :background="$heroImage"
+        alt="Kapal dan aktivitas maritim sebagai latar struktur organisasi"
+    />
 
     <section class="relative overflow-hidden bg-white py-16 sm:py-20" aria-labelledby="organization-intro-title">
         <div class="pointer-events-none absolute right-0 top-16 hidden h-px w-1/3 bg-gradient-to-l from-[#0F2D52]/16 to-transparent lg:block"></div>

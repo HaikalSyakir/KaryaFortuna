@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder Sertifikat Dummy</title>
+  <desc id="desc">Placeholder lokal untuk pratinjau dokumen legalitas dan sertifikasi.</desc>
+  <rect width="1200" height="1600" fill="#EEF3F8"/>
+  <rect x="118" y="110" width="964" height="1380" rx="18" fill="#FFFFFF" stroke="#0F2D52" stroke-opacity=".22" stroke-width="6"/>
+  <rect x="170" y="162" width="860" height="1276" rx="8" fill="#FFFFFF" stroke="#C62828" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M248 330h704M248 388h704M310 1086h580M350 1150h500" stroke="#0F2D52" stroke-opacity=".18" stroke-width="24" stroke-linecap="round"/>
+  <path d="M300 528h600M300 592h600M300 656h600M300 720h600M300 784h450" stroke="#0F2D52" stroke-opacity=".13" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="600" cy="942" r="104" fill="#C62828" fill-opacity=".10" stroke="#C62828" stroke-width="10"/>
+  <path d="M552 940l34 34 70-82" fill="none" stroke="#C62828" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="600" y="252" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#081F3A">DUMMY CERTIFICATE</text>
+  <text x="600" y="1238" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0F2D52">PREVIEW PLACEHOLDER</text>
+  <text x="600" y="1300" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#64748B">Ganti file ini dengan gambar sertifikat final</text>
+</svg>

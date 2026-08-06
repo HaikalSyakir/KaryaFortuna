@@ -50,29 +50,14 @@
 @extends('layouts.app', ['title' => $title, 'description' => $description])
 
 @section('content')
-    <section class="relative isolate flex min-h-[66vh] overflow-hidden bg-[#081F3A] pt-16 text-white sm:min-h-[72vh]" aria-labelledby="profile-hero-title">
-        <img
-            src="{{ $heroImage }}"
-            alt="Kapal dan aktivitas pelayaran di area maritim"
-            class="absolute inset-0 -z-20 h-full w-full object-cover"
-            loading="eager"
-            fetchpriority="high"
-        >
-        <div class="absolute inset-0 -z-10 bg-[#081F3A]/68"></div>
-        <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(8,31,58,0.94)_0%,rgba(8,31,58,0.74)_50%,rgba(8,31,58,0.45)_100%)]"></div>
-
-        <div class="mx-auto flex w-full max-w-7xl items-center px-5 py-20 sm:px-6 lg:px-8">
-            <div data-hero-text class="max-w-3xl">
-                <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-100">Tentang Kami</p>
-                <h1 id="profile-hero-title" class="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                    Profil Karya Fortuna Shipping
-                </h1>
-                <p class="mt-6 max-w-2xl text-base leading-8 text-white/84 sm:text-lg">
-                    Membangun konektivitas maritim melalui layanan pelayaran dan solusi logistik yang terpercaya.
-                </p>
-            </div>
-        </div>
-    </section>
+    <x-page-hero
+        id="profile-hero-title"
+        eyebrow="Tentang Kami"
+        title="Profil Karya Fortuna Shipping"
+        description="Membangun konektivitas maritim melalui layanan pelayaran dan solusi logistik yang terpercaya."
+        :background="$heroImage"
+        alt="Kapal dan aktivitas pelayaran di area maritim"
+    />
 
     <section class="relative overflow-hidden bg-white py-20 sm:py-24">
         <div class="pointer-events-none absolute right-0 top-16 hidden h-px w-1/3 bg-gradient-to-l from-[#0F2D52]/16 to-transparent lg:block"></div>
