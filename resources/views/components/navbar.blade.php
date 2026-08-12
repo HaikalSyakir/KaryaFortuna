@@ -44,11 +44,11 @@
         ],
         [
             'label' => 'Afiliasi',
-            'active' => ['applications.*'],
+            'active' => ['afiliasi.*', 'applications.*'],
             'children' => [
                 [
                     'items' => [
-                        ['label' => 'PT GBF', 'route' => 'applications.gbf'],
+                        ['label' => 'PT GBF', 'route' => 'afiliasi.pt-gbf'],
                         ['label' => 'PT FTG', 'route' => 'applications.ftg'],
                         ['label' => 'PT Gemilang', 'route' => 'applications.gemilang'],
                     ],
@@ -72,7 +72,7 @@
         }
     }
 
-    $isLightAtTop = request()->routeIs('home', 'about.profile', 'about.vision-mission', 'about.organization-structure', 'about.legality');
+    $isLightAtTop = request()->routeIs('home', 'about.profile', 'about.vision-mission', 'about.organization-structure', 'about.legality', 'afiliasi.pt-gbf');
 @endphp
 
 <header
@@ -251,4 +251,5 @@
         </div>
     </div>
 </header>
+
 

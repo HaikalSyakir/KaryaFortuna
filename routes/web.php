@@ -15,6 +15,7 @@ $pages = [
     ['uri' => '/layanan/dokumentasi-perizinan-kapal', 'name' => 'services.ship-documentation-permits', 'view' => 'pages.services.dokumentasi-perizinan-kapal'],
     ['uri' => '/armada/tugboat-barge', 'name' => 'fleets.tugboat-barge', 'view' => 'pages.services.tugboat-barge'],
     ['uri' => '/armada/seatruck', 'name' => 'fleets.seatruck', 'view' => 'pages.services.seatruck'],
+    ['uri' => '/afiliasi/pt-gbf', 'name' => 'afiliasi.pt-gbf', 'view' => 'pages.applications.gbf'],
     ['uri' => '/aplikasi/gbf', 'name' => 'applications.gbf', 'view' => 'pages.applications.gbf'],
     ['uri' => '/aplikasi/ftg', 'name' => 'applications.ftg', 'view' => 'pages.applications.ftg'],
     ['uri' => '/aplikasi/gemilang', 'name' => 'applications.gemilang', 'view' => 'pages.applications.gemilang'],
@@ -24,3 +25,5 @@ $pages = [
 foreach ($pages as $page) {
     Route::view($page['uri'], $page['view'])->name($page['name']);
 }
+
+
