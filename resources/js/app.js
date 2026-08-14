@@ -121,6 +121,12 @@ if (!prefersReducedMotion) {
     );
 
     animate(
+        '[data-hero-visual]',
+        { opacity: [0, 1], scale: [0.97, 1] },
+        { delay: 0.22, duration: 0.68, easing: [0.22, 1, 0.36, 1] },
+    );
+
+    animate(
         '[data-home-hero-badge]',
         { opacity: [0, 1] },
         { delay: 0.08, duration: 0.45, easing: [0.22, 1, 0.36, 1] },

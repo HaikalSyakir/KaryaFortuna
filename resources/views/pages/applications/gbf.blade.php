@@ -42,8 +42,10 @@
 @section('content')
     <x-page-hero
         id="gbf-hero-title"
-        eyebrow="Afiliasi"
+        eyebrow="Afiliasi Karya Fortuna Shipping"
         title="PT GBF"
+        variant="split"
+        visual-caption="Affiliate company profile and logistics support"
         description="Informasi mengenai PT GBF sebagai bagian dari jaringan afiliasi dan mitra Karya Fortuna Shipping."
         :background="$heroImage"
         alt="Aktivitas pelayaran dan logistik maritim"

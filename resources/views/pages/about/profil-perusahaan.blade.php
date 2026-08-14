@@ -54,6 +54,8 @@
         id="profile-hero-title"
         eyebrow="Tentang Kami"
         title="Profil Karya Fortuna Shipping"
+        variant="split"
+        visual-caption="Corporate profile and maritime operations"
         description="Membangun konektivitas maritim melalui layanan pelayaran dan solusi logistik yang terpercaya."
         :background="$heroImage"
         alt="Kapal dan aktivitas pelayaran di area maritim"

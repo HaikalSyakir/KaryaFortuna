@@ -57,6 +57,7 @@
         id="gemilang-hero-title"
         eyebrow="Afiliasi Karya Fortuna Shipping"
         title="PT Gemilang"
+        variant="affiliate-visual"
         description="PT Gemilang merupakan salah satu perusahaan dalam jaringan afiliasi Karya Fortuna Shipping yang mendukung penguatan kerja sama bisnis, operasional maritim, dan layanan logistik pendukung."
         :background="$heroImage"
         alt="Aktivitas crane dan kontainer di area pelabuhan"

@@ -59,8 +59,9 @@
 @section('content')
     <x-page-hero
         id="legality-hero-title"
-        eyebrow="Tentang Kami"
+        eyebrow="Trust & Compliance"
         :title="'Legalitas & Sertifikasi'"
+        variant="formal"
         description="Dokumen legalitas dan sertifikasi yang mendukung profesionalisme serta kredibilitas Karya Fortuna Shipping."
         :background="$heroImage"
         alt="Kapal dan aktivitas maritim Karya Fortuna Shipping"
@@ -278,4 +279,3 @@
         </div>
     </div>
 @endsection
-

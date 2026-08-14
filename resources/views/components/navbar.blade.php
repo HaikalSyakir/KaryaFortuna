@@ -72,7 +72,7 @@
         }
     }
 
-    $isLightAtTop = request()->routeIs('home', 'about.profile', 'about.vision-mission', 'about.organization-structure', 'about.legality', 'afiliasi.pt-gbf');
+    $isLightAtTop = request()->routeIs('home', 'about.profile', 'about.vision-mission', 'about.organization-structure', 'about.legality', 'afiliasi.pt-gbf', 'applications.gbf', 'applications.ftg', 'applications.gemilang');
 @endphp
 
 <header

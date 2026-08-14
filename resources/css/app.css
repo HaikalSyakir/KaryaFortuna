@@ -19,3 +19,26 @@
         min-width: 320px;
     }
 }
+@keyframes legalHeroImage {
+    0% {
+        transform: scale(1.03) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: scale(1.08) translate3d(-1.2%, -0.8%, 0);
+    }
+}
+
+@keyframes legalHeroLine {
+    0%, 100% {
+        transform: scaleX(0.72);
+        transform-origin: left;
+        opacity: 0.72;
+    }
+
+    50% {
+        transform: scaleX(1);
+        transform-origin: left;
+        opacity: 1;
+    }
+}

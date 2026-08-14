@@ -72,8 +72,10 @@
 @section('content')
     <x-page-hero
         id="organization-hero-title"
-        eyebrow="Tentang Kami"
+        eyebrow="Corporate Structure"
         title="Struktur Organisasi Karya Fortuna Shipping"
+        variant="corporate"
+        visual-caption="Structured coordination for maritime operations"
         description="Struktur organisasi Karya Fortuna Shipping dibangun untuk mendukung koordinasi, efisiensi operasional, dan pencapaian tujuan perusahaan."
         :background="$heroImage"
         alt="Kapal dan aktivitas maritim sebagai latar struktur organisasi"

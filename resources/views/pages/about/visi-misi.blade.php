@@ -2,6 +2,7 @@
     $title = 'Visi & Misi | Karya Fortuna Shipping';
     $description = 'Kenali visi, misi, dan prinsip Karya Fortuna Shipping dalam membangun layanan maritim yang profesional, terpercaya, dan berkelanjutan.';
     $heroImage = asset('images/hero/gambar2.jpg');
+    $heroSecondaryImage = asset('images/hero/gambar3.jpg');
 
     $vision = [
         'title' => 'Visi Kami',
@@ -65,10 +66,13 @@
 @section('content')
     <x-page-hero
         id="vision-mission-hero-title"
-        eyebrow="Tentang Kami"
+        eyebrow="Our Vision & Mission"
         :title="'Visi & Misi Karya Fortuna Shipping'"
-        description="Menjadi perusahaan maritim yang terus berkembang melalui layanan yang profesional, terpercaya, dan berorientasi pada kebutuhan pelanggan."
+        variant="minimal"
+        description="Menjadi perusahaan pelayaran dan solusi maritim yang terpercaya melalui layanan profesional, efisien, dan berorientasi pada keberlanjutan."
         :background="$heroImage"
+        :secondary-background="$heroSecondaryImage"
+        secondary-alt="Aktivitas pelayaran dan logistik maritim Karya Fortuna Shipping"
         alt="Aktivitas pelayaran dan kapal di area maritim"
     />
 
@@ -198,5 +202,3 @@
         </div>
     </section>
 @endsection
-
-
