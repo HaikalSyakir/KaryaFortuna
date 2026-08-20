@@ -1,4 +1,4 @@
-﻿@php
+@php
     $navigationItems = [
         [
             'label' => 'Beranda',
@@ -72,11 +72,11 @@
         }
     }
 
-    $isHome = request()->routeIs('home');
+    $lightAtTop = request()->routeIs('home') || request()->routeIs('fleets.tugboat-barge');
 @endphp
 
 <header
-    x-data="{ mobileOpen: false, scrolled: false, activeAccordion: @js($activeAccordionIndex), lightAtTop: @js($isHome) }"
+    x-data="{ mobileOpen: false, scrolled: false, activeAccordion: @js($activeAccordionIndex), lightAtTop: @js($lightAtTop) }"
     x-init="
         scrolled = window.scrollY > 24;
         window.addEventListener('scroll', () => scrolled = window.scrollY > 24, { passive: true });
