@@ -72,7 +72,7 @@
         }
     }
 
-    $lightAtTop = request()->routeIs('home') || request()->routeIs('fleets.tugboat-barge');
+    $lightAtTop = request()->routeIs('home') || request()->routeIs('fleets.tugboat-barge') || request()->routeIs('fleets.seatruck');
 @endphp
 
 <header
@@ -251,3 +251,4 @@
         </div>
     </div>
 </header>
+
