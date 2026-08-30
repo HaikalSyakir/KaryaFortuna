@@ -72,7 +72,7 @@
         }
     }
 
-    $lightAtTop = request()->routeIs('home') || request()->routeIs('services.bulk-cargo-transport') || request()->routeIs('services.crew-transport') || request()->routeIs('services.ship-maintenance-repair') || request()->routeIs('fleets.tugboat-barge') || request()->routeIs('fleets.seatruck');
+    $lightAtTop = request()->routeIs('home') || request()->routeIs('services.bulk-cargo-transport') || request()->routeIs('services.barge-rental') || request()->routeIs('services.crew-transport') || request()->routeIs('services.ship-maintenance-repair') || request()->routeIs('services.ship-documentation-permits') || request()->routeIs('fleets.tugboat-barge') || request()->routeIs('fleets.seatruck');
 @endphp
 
 <header
@@ -251,6 +251,4 @@
         </div>
     </div>
 </header>
-
-
 
