@@ -17,6 +17,7 @@
         "vite": "^7.0.7"
     },
     "dependencies": {
+        "bootstrap-icons": "^1.13.1",
         "embla-carousel": "^8.6.0",
         "embla-carousel-autoplay": "^8.6.0",
         "embla-carousel-fade": "^8.6.0"
