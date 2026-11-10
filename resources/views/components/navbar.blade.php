@@ -72,19 +72,28 @@
         }
     }
 
-<<<<<<< HEAD
-    $isLightAtTop = request()->routeIs('home', 'about.profile', 'about.vision-mission', 'about.organization-structure', 'about.legality', 'afiliasi.pt-gbf', 'applications.gbf', 'applications.ftg', 'applications.gemilang');
-@endphp
-
-<header
-    x-data="{ mobileOpen: false, scrolled: false, activeAccordion: @js($activeAccordionIndex), lightAtTop: @js($isLightAtTop) }"
-=======
-    $lightAtTop = request()->routeIs('home') || request()->routeIs('services.bulk-cargo-transport') || request()->routeIs('services.barge-rental') || request()->routeIs('services.crew-transport') || request()->routeIs('services.ship-maintenance-repair') || request()->routeIs('services.ship-documentation-permits') || request()->routeIs('fleets.tugboat-barge') || request()->routeIs('fleets.seatruck');
+    $lightAtTop = request()->routeIs(
+        'home',
+        'about.profile',
+        'about.vision-mission',
+        'about.organization-structure',
+        'about.legality',
+        'afiliasi.pt-gbf',
+        'applications.gbf',
+        'applications.ftg',
+        'applications.gemilang',
+        'services.bulk-cargo-transport',
+        'services.barge-rental',
+        'services.crew-transport',
+        'services.ship-maintenance-repair',
+        'services.ship-documentation-permits',
+        'fleets.tugboat-barge',
+        'fleets.seatruck'
+    );
 @endphp
 
 <header
     x-data="{ mobileOpen: false, scrolled: false, activeAccordion: @js($activeAccordionIndex), lightAtTop: @js($lightAtTop) }"
->>>>>>> layanan
     x-init="
         scrolled = window.scrollY > 24;
         window.addEventListener('scroll', () => scrolled = window.scrollY > 24, { passive: true });
@@ -259,8 +268,3 @@
         </div>
     </div>
 </header>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> layanan
